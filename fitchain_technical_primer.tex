@@ -51,10 +51,6 @@
 \author{\textit{Francesco Gadaleta, Ph.D.}\\ \textit{Daan Gerits}}
 \maketitle
 
-% FIXME
-% https://flatiron.com/real-world-evidence/
-% https://www.producthunt.com/posts/new/info
-% http://consumer.findlaw.com/securities-law/what-is-the-howey-test.html
 
 \begin{abstract}
 This paper provides an introduction to the \textbf{fitchain} platform. 
@@ -67,15 +63,7 @@ A reward assigned to each project, together with the additional incentives for m
 \end{abstract}
 
 \section{Introduction}
-
-%Given a large enough beta tester and co developer base, almost every problem will be characterized quickly and the fix obvious to someone   Eric S. Raymond, The Cathedral and The Bazaar
-
-%\subsection{NOTES}
-
-%What do we want to achieve and why is this important. The benefits of a platform like fitchain.
 In the era of machine learning, characterised by more and more powerful hardware. more accurate predictive models, and the capability to collect large amounts of data, both organisations and individuals feel the urge to act on their data as they never did before, in order to extract some sort of value that would be beneficial to their business. The progress of machine learning \footnote{Gartner Says AI Technologies Will Be in Almost Every New Software Product by 2020, \url{https://www.gartner.com/newsroom/id/3763265}} and the success achieved in transforming raw data into knowledge is undeniable \footnote{2018 AI predictions 8 insights to shape business strategy, \url{https://www.pwc.com/us/en/advisory-services/assets/ai-predictions-2018-report.pdf} } 
-
-%Democratize data science. Start from data. Now models can be trained only on data that can be accessed. This is not democratic. Demo starts from data. Then models. Data are however an asset and should stay protected. 
 
 Data driven decisions are essential for organisations with complex business dynamics, in which human intervention is usually less effective, often prone to error, and generally speaking much slower than the pace of collecting the data itself. As a matter of fact, data has become a valuable asset, sometimes more valuable than traditional ones. Not only for IT giants like Google, Facebook and Twitter, but also for pharmaceutical and financial corporations it is essential to act on data in order to maintain an advantageous position with their competitors and take decisions faster, minimising losses and maximising profits. As a consequence, the figure of the data scientist has acquired a fundamental role within the settings of many data-driven organisations.
 
@@ -101,8 +89,6 @@ In contrast, organisations are experiencing other limitations, namely they
 The main challenge addressed by \textit{fitchain} consists in allowing data scientists  design their models on data they cannot access, or equivalently to grant organisations access to a global pool of data scientists without sharing any confidential information with them. 
 This is not an easy task for the reasons we identify in the following paragraphs. 
 
-%\paragraph{Data Complexity}
-%Data scientists must see the data they work on, in order to clean it and prepare it for their models to train. Data cleaning is still the most time consuming task of any data analytics pipeline due to the fact that it requires human intervention. Regardless of the advent of very sophisticated artificial intelligence techniques, models are more reliable when trained on clean, high quality data. 
 
 \paragraph{Security}
 If data cannot be transferred outside the organisation's infrastructure, then models should be transferred and trained at the organisation's site. This clearly opens the doors to a plethora of attacks that can be triggered by malicious code, hidden behind a legit machine learning model, tampering with the organisation's infrastructure during model training
@@ -143,13 +129,12 @@ The original data source is never modified nor shared in any form. As this is th
 \end{center}
 
 Data scientists who want to develop a predictive model in the domain of interest can connect to the fitchain platform as \emph{Model Provider}. Such a data scientist might be looking for submitted projects in search for a solution. Needless to say,\emph{Model Provider} will choose the project that is more convenient to her in terms of effort, required skills and offered reward, after which she will start working on a model implementation. This would be possible due to the fact that the project description is supplied with the data template that can be used to assess the compatibility of the model with the original data. A model that \textit{works} on the data template, is supposed to work on the original data too (provided the data owner is not changing the original data without informing her \textit{fitchain-pod}).
-Once a model has been implemented and submitted, the pods of the actors involved in the process will orchestrate model deployment and model training within the organisation's infrastructure, the only location where the real (private) data is stored and made available. %Needless to say, any attempt to bring the data outside the aforementioned environment will be denied as it violates the security requirements of the \textbf{fitchain pod}.
- 
+Once a model has been implemented and submitted, the pods of the actors involved in the process will orchestrate model deployment and model training within the organisation's infrastructure, the only location where the real (private) data is stored and made available. 
+
 \subsection{The Model Validator}
 Any model that is remotely trained, requires to be validated, in order to be deployed in production environments. As a matter of fact, a malicious organisation could train models on fake data, or could fake the entire model training process. 
 Model validation is an essential task that is twofold: it discourages organisations to fake model training and assesses the predictive power of models as they become available assets within the fitchain ecosystem.
 The model validation process consists of a set of interactions between two actors: \textit{the prover} and \textit{the verifier}. The protocol implemented to validate models by consensus has been designed as an interactive zero-knowledge\cite{zxsnarks} proof system, the details of which will be reported in the \textit{fitchain whitepaper} (coming soon).
-%Validation by consensus Computing consuming mining but in this case the computation which is undeniable serves the purpose.
 
 The two actors of the model validation process are 
 
@@ -162,7 +147,6 @@ Technically speaking the challenge-based model verification process is equivalen
  
 Together with the traces generated by the pod during training, the model verification process constitutes what we refer to as the \textit{proof-of-train}. 
 Needless to say, no sensitive data is stored to the public ledger, nor transferred anywhere else, as the sole purpose of the \textit{proof-of-train} mechanism consists in guaranteeing that organisations and data scientists do not violate the security requirements of the fitchain platform.
-%detect suspicious transactions characterising models trained in FIXME (do we have to say this?)
 
 
 \section{Use Cases}
@@ -170,19 +154,8 @@ The fitchain platform has been designed to accommodate the needs of highly regul
 
 Among the numerous scenarios in which data analytics has already proved to be effective, healthcare is the one we believe will have higher impact on society, as soon as solutions to unlock sensitive data are found. 
 
-% Transportation Uber is now using Machine Learning technology to more efficiently allocate its cars and drivers, seeking to ensure riders can always get a ride when they need one, without having to pay surge pricing.
-
-%Robotics Using complex Machine Learning algorithms—and a range of sensors and motion capture cameras that feed data to the algorithms—computer scientists at The University of Washington have built a robotic hand that can actually “learn” to get better at its tasks.
-
-%Entertainment First, Machine Learning started predicting the movies we want to watch (Netflix). Now, it's creating the movies! A collaboration between a filmmaker and a data scientist has produced a film written entirely by a recurrent neural network named "Benjamin."
-
-% Security Finance companies like PayPal are using deep learning techniques to analyze gargantuan amounts of data in the service of preventing fraud, and companies are using increasingly sophisticated behavioral analytics tools to prevent security breaches.
-
 
 \subsection{Healthcare\&Pharma}
-%Research in data analytics and 
-%FIXME write this as fitchain primary mission
-%mission to deploy technology for social benefit
 The primary mission of fitchain is to unlock the value of highly sensitive data, owned by pharmaceutical and healthcare institutions. As a matter of fact, healthcare and pharmaceutical institutions represent one of the most regulated environments in data science. Pharmacological and medical data, chemical compounds in the field of drug discovery, medical claims for real-world evidence (RWE), and sales statistics of drugs in companies' portfolios, represent only a tiny fraction of the amount of data that such organisations usually store in their infrastructures and deal with.
 
 We strongly believe our mission is going to impact research and development as well as bring social benefit on a global scale.  
@@ -194,8 +167,6 @@ It is one goal of fitchain to facilitate the way data scientists interact with o
 There are very common scenarios in which trans-institutional curated data is mostly required for advanced medical research and analytics. More specifically, precision medicine utilises genomics and traditional clinical data to assess risk to disease. Clinical trials depend on unstructured and interconnected data, usually stored in different silos. In such complex contexts, it is important to consume data wherever it is created or collected, without the necessity to move it across cloud storage facilities. This facilitates the process of analytics because the risk of data leakage and loss are dramatically reduced. 
 
 Fitchain brings computing to the data, facilitating the training of machine learning models, and redistributing the aforementioned trained models from their owners to their direct users, achieving far greater levels of insight in medical data.
-
-%Using deep learning and artificial intelligence, a new microscope can capture and analyze cell images at a rate of 36,000/second, allowing it to locate cancer cells with 95% accuracy.
 
 \subsection{Finance and Banking}
 Banks and financial institutions represent another highly regulated environment that has never experienced shortage of data. From financial transactions of individuals, to insurance claims and trading ticks, the amount of data in the financial sector is growing at a very fast pace and does not seem to slow down any time soon. 
@@ -215,7 +186,6 @@ It is legitimate to think that the same organisations that today profit from ind
 
 As a matter of fact, everyone can open their data to the public without disclosing personal information. 
 In such a scenario, fitchain fills the gap between individuals who provide the data and organisations (or other individuals) who provide the models, via a platform that implements the data-model marketplace. 
-%A new market might emerge in the field of IOT, home automation and social media.
 
 \subsection{Research and Development}
 In several domains, research is conducted by publishing results from methods (usually machine learning models) performed under specific conditions and datasets. Any claimed result requires verification and, more importantly, \textit{reproducibility}. 
@@ -261,12 +231,7 @@ An organisation who never completed model training, a data scientist who attempt
 The reputation score is built as all the actors keep interacting in the marketplace. Therefore it is a dynamic and adaptive score that reflects the state of the network and all interactions thus far, similarly to financial wallets of a bank or a blockchain. 
 Details about how such a reputation score is calculated will be provided in the whitepaper.
 
-%Incentives for organisations 
-%Incentives for data scientists.
-%Incentives for validators. 
-%Reputation of scientists, organisations and models
 
-%\section{Token Design TBD}
 \pagebreak 
 \section{Security Concerns}
 A system that facilitate the interaction between non authenticated peers and private assets must be considered critical, when it comes to security concerns. In this section we expand on the three most critical security issues that might arise by such interaction and should be addressed in order to guarantee protection for the private assets an organisation decided to unlock. The first concern regards infrastructure and data escapes. The second security issue is about escaping data via machine learning models while the last concern is about faking the training process.
@@ -326,27 +291,6 @@ Fitchain implements a complex signalling mechanism to generate blockchain transa
 Tracking all the phases of an interaction between any two actors provides high security guarantees about the authenticity of the model. External actors are always capable of inspecting and validating the state of the interaction during and after model training.
 
 
-
-
-
-
-
- 
-% https://coursetro.com/posts/code/99/Interacting-with-a-Smart-Contract-through-Web3.js-(Tutorial)
-% theoretical verification of ML 
-% http://www.cleverhans.io/security/privacy/ml/2017/06/14/verification.html
-
-% zero-knowledge verification
-% https://blog.ethereum.org/2016/12/05/zksnarks-in-a-nutshell/#comment-15678
-
-% http://vitalik.ca/general/2017/11/09/starks_part_1.html
-%From wikipedia https://en.wikipedia.org/wiki/Secure_multi-party_computation
-
-%Like many cryptographic protocols, the security of an MPC protocol can rely on different assumptions:
-%It can be computational (i.e. based on some mathematical problem, like factoring) or unconditional (usually with some probability of error which can be made arbitrarily small).
-%The model might assume that participants use a synchronized network, where a message sent at a "tick" always arrives at the next "tick", or that a secure and reliable broadcast channel exists, or that a secure communication channel exists between every pair of participants where an adversary cannot read, modify or generate messages in the channel, etc.
-%https://en.wikipedia.org/wiki/Synchronization_networks
-
 \pagebreak
 \section{Conclusion}
 It is undeniable that data scientists allow organisations to venture into machine learning and experience the numerous potential benefits of predictive models. An essential requirement for organisations is to make their data accessible to the data scientists who will operate and train their models. Such access is usually granted via legal contracts and non disclosure agreements and the usual long and tedious hiring process. 
@@ -358,25 +302,7 @@ The security mechanisms that are implemented in the \textit{fitchain-pod} provid
 Data, machine learning skills and models are tradeable assets in the fitchain marketplace, defined as the decentralised, secure and traceable machine learning factory.
 
 
-%
-%Data and analytics leaders face a dilemma. Without data scientists, venturing into machine learning and data science is difficult. Without any successful pilots, convincing the business to hire data scientists is equally challenging.
-%
-%    “Enterprises don’t have to have a large data science lab in order to take advantage of machine learning. Start small and evolve.”
-%
-%“Many organizations are still in the early phases of their data science journey and struggle to understand what machine learning and data science can do for them,” says Cindi Howson, research vice president at Gartner. “They don’t exactly know which skills are needed and hiring data scientists is difficult.”
-%
-%Unlock the value of data
-%Blockchain proved to be the technology that can provide decentralisation, security, and traceability. 
-%Models can be traced and should like ECC 
-
-% https://www.gartner.com/smarterwithgartner/how-to-do-machine-learning-without-hiring-data-scientists/
-% prover-verifier ref (https://en.wikipedia.org/wiki/Interactive_proof_system)
-
 \bibliographystyle{plain}
 \bibliography{fitchain.bib}
 
 \end{document}
-
-
-
-
